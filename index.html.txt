@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pisa Digital Detox - 24 Ore Senza Telefono | Servizio Unico a Pisa</title>
+    <meta name="description" content="Primo servizio di digital detox a Pisa. Deposita il telefono per 24 ore e ritrova concentrazione e serenità. Solo 10€. Prenota ora la tua libertà digitale.">
+    
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Futura:wght@300;400;500;700&family=Avenir:wght@300;400;500&family=DIN+Next:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --color-black: #000000;
+            --color-dark-gray: #6E6E6D;
+            --color-light-gray: #B0B0B0;
+            --color-white: #FFFFFF;
+            --color-light-bg: #F0EDED;
+            --color-medium-bg: #CCC6C6;
+            --color-accent: #899DA3;
+            --color-light-accent: #E8EFF1;
+            --color-pink-accent: #FADCD6;
+            --color-blue-accent: #B6D1D9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', 'Avenir', sans-serif;
+            line-height: 1.4;
+            color: var(--color-black);
+            background: var(--color-white);
+        }
+        
+        /* Header */
+        header {
+            background: var(--color-white);
+            padding: 23px 0 7px;
+            border-bottom: 1px solid transparent;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+            margin: 0;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--color-black);
+            font-size: 14px;
+            font-weight: 300;
+            transition: color 0.4s ease;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        nav a:hover {
+            color: var(--color-accent);
+        }
+        
+        .language-selector {
+            background: var(--color-white);
+            border: 1px solid var(--color-accent);
+            border-radius: 0;
+            padding: 10px 15px;
+            font-size: 15px;
+            color: var(--color-black);
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            min-width: 168px;
+            height: 45px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 69px;
+            padding: 200px 20px 30px;
+            text-align: center;
+            background: var(--color-light-bg);
+            min-height: calc(100vh - 69px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .hero h1 {
+            font-size: 126px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', 'Futura', sans-serif;
+            letter-spacing: -2px;
+            line-height: 1.2;
+        }
+        
+        .hero .subtitle {
+            font-size: 60px;
+            font-weight: 300;
+            margin-bottom: 60px;
+            font-family: 'Montserrat', 'Futura', sans-serif;
+            max-width: 980px;
+            line-height: 1.3;
+        }
+        
+        /* Three Steps Section */
+        .three-steps {
+            display: flex;
+            max-width: 980px;
+            margin: 0 auto;
+            height: 443px;
+        }
+        
+        .step {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            position: relative;
+        }
+        
+        .step:nth-child(1) {
+            background: var(--color-medium-bg);
+        }
+        
+        .step:nth-child(2) {
+            background: var(--color-pink-accent);
+        }
+        
+        .step:nth-child(3) {
+            background: var(--color-blue-accent);
+        }
+        
+        .step-number {
+            font-size: 80px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .step-title {
+            font-size: 36px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', 'Futura', sans-serif;
+        }
+        
+        .step-description {
+            font-size: 15px;
+            line-height: 1.6;
+            text-align: center;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            max-width: 285px;
+        }
+        
+        .step-divider {
+            width: 100px;
+            height: 1px;
+            background: var(--color-black);
+            margin: 20px auto;
+        }
+        
+        /* Why Section */
+        .why-section {
+            padding: 100px 20px;
+            background: var(--color-white);
+            text-align: center;
+        }
+        
+        .why-section h2 {
+            font-size: 38px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', 'Futura', sans-serif;
+        }
+        
+        .why-section .subtitle {
+            font-size: 17px;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+        }
+        
+        .problems-container {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            margin-bottom: 60px;
+        }
+        
+        .problem {
+            text-align: center;
+            max-width: 200px;
+        }
+        
+        .problem-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 500;
+            margin: 0 auto 20px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .problem:nth-child(1) .problem-circle {
+            background: var(--color-medium-bg);
+        }
+        
+        .problem:nth-child(2) .problem-circle {
+            background: var(--color-pink-accent);
+        }
+        
+        .problem:nth-child(3) .problem-circle {
+            background: #E8D4C6;
+        }
+        
+        .problem h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+        }
+        
+        .cta-button {
+            background: var(--color-accent);
+            color: var(--color-white);
+            padding: 15px 40px;
+            border: none;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Lato', sans-serif;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-button:hover {
+            background: #7A8D93;
+            transform: translateY(-2px);
+        }
+        
+        /* Process Detailed Section */
+        .process-detailed {
+            background: var(--color-light-bg);
+            padding: 80px 20px;
+        }
+        
+        .process-container {
+            max-width: 980px;
+            margin: 0 auto;
+            display: flex;
+            gap: 60px;
+        }
+        
+        .process-step-detailed {
+            flex: 1;
+            background: var(--color-white);
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .process-step-detailed h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+        
+        .process-step-detailed p {
+            font-size: 15px;
+            line-height: 1.8;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+        }
+        
+        .email-link {
+            color: var(--color-accent);
+            text-decoration: underline;
+        }
+        
+        /* Method and Story Section */
+        .method-story-section {
+            padding: 100px 20px;
+            background: var(--color-white);
+        }
+        
+        .method-story-container {
+            max-width: 980px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .content-block {
+            padding: 40px;
+        }
+        
+        .content-block h2 {
+            font-size: 38px;
+            margin-bottom: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+        }
+        
+        .content-block p {
+            font-size: 17px;
+            line-height: 1.8;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+        }
+        
+        .image-placeholder {
+            background: var(--color-light-bg);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-dark-gray);
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .story-section {
+            background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-blue-accent) 100%);
+            color: var(--color-white);
+            padding: 80px 20px;
+            margin-top: 80px;
+        }
+        
+        .story-section h2 {
+            color: var(--color-white);
+        }
+        
+        .story-section p {
+            color: var(--color-white);
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 100px 20px;
+            background: var(--color-white);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--color-white);
+            border-top: 1px solid var(--color-light-gray);
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 980px;
+            margin: 0 auto;
+        }
+        
+        .footer-email {
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .footer-email a {
+            color: var(--color-black);
+            text-decoration: none;
+        }
+        
+        .footer-contact {
+            margin-top: 20px;
+            font-size: 16px;
+            font-family: 'Lato', sans-serif;
+        }
+        
+        .footer-copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            font-size: 14px;
+            color: var(--color-dark-gray);
+            font-family: 'Lato', sans-serif;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 60px;
+            }
+            
+            .hero .subtitle {
+                font-size: 30px;
+            }
+            
+            .three-steps {
+                flex-direction: column;
+                height: auto;
+            }
+            
+            .problems-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .process-container {
+                flex-direction: column;
+            }
+            
+            .method-story-container {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#chi-siamo">Chi Siamo</a></li>
+                    <li><a href="#inizia">Inizia Ora</a></li>
+                    <li><a href="#contatti">Contatti</a></li>
+                </ul>
+            </nav>
+            <select class="language-selector">
+                <option value="it">🇮🇹 Italiano</option>
+                <option value="en">🇬🇧 English</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Pisa Digital Detox</h1>
+        <p class="subtitle">24 ore senza telefono per ritrovare la tua vita</p>
+        
+        <!-- Three Steps -->
+        <div class="three-steps">
+            <div class="step">
+                <div class="step-number">1.</div>
+                <h3 class="step-title">Prenota</h3>
+            </div>
+            <div class="step">
+                <div class="step-number">2.</div>
+                <h3 class="step-title">Deposita</h3>
+            </div>
+            <div class="step">
+                <div class="step-number">3.</div>
+                <h3 class="step-title">Ritira</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Section -->
+    <section class="why-section">
+        <h2>Perché Hai Bisogno di un Digital Detox</h2>
+        <p class="subtitle">Riconosci questi segnali? Se almeno uno di questi problemi ti suona familiare, è tempo di provare le nostre 24 ore di libertà digitale.</p>
+        
+        <div class="problems-container">
+            <div class="problem">
+                <div class="problem-circle">1.</div>
+                <h3>Distrazione<br>Costante</h3>
+            </div>
+            <div class="problem">
+                <div class="problem-circle">2.</div>
+                <h3>Ansia da notifiche</h3>
+            </div>
+            <div class="problem">
+                <div class="problem-circle">3.</div>
+                <h3>Impossibilità di<br>raggiungere i tuoi<br>obiettivi</h3>
+            </div>
+        </div>
+        
+        <a href="#inizia" class="cta-button">Inizia il Tuo Detox Oggi</a>
+    </section>
+
+    <!-- Process Detailed -->
+    <section class="process-detailed">
+        <div class="process-container">
+            <div class="process-step-detailed">
+                <p>Inizia il tuo viaggio verso la libertà digitale. Contattaci via email per prenotare le tue 24 ore senza telefono. Ti confermeremo disponibilità e orario per il deposito. Un piccolo passo che cambierà la tua giornata.</p>
+                <p style="margin-top: 20px;"><strong>Prenota ora a:</strong> <a href="mailto:pisadigitaldetox@pm.me" class="email-link">pisadigitaldetox@pm.me</a></p>
+            </div>
+            <div class="process-step-detailed">
+                <p>Vieni nel nostro punto di raccolta all'orario concordato. Il tuo telefono sarà custodito in un luogo sicuro per 24 ore esatte. Riceverai una ricevuta numerata. Solo 10€ per riscoprire la vita offline.</p>
+            </div>
+            <div class="process-step-detailed">
+                <p>Dopo 24 ore, torna a riprendere il tuo dispositivo. Ti accorgerai di quanto sia stato liberatorio questo tempo. Molti clienti ci dicono di sentirsi più concentrati, rilassati e presenti. Pronto a rifarlo?</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Method and Story -->
+    <section class="method-story-section" id="chi-siamo">
+        <div class="method-story-container">
+            <div class="content-block">
+                <h2>Il Nostro Metodo</h2>
+                <p>A Pisa Digital Detox, crediamo che la vera soluzione alla dipendenza digitale richieda una separazione fisica dal dispositivo. Non app, non modalità aereo - ma una vera pausa. Il nostro approccio è semplice: affidaci il tuo telefono per 24 ore e riscopri come vivere nel presente, concentrarti sui tuoi obiettivi e connetterti davvero con chi ti circonda.</p>
+                <div class="step-divider"></div>
+            </div>
+            <div class="image-placeholder">
+                [La tua foto qui]
+            </div>
+        </div>
+        
+        <div class="story-section">
+            <div class="method-story-container">
+                <div class="image-placeholder">
+                    [La tua foto qui]
+                </div>
+                <div class="content-block">
+                    <h2>La Nostra Storia</h2>
+                    <p>La mia laurea l'ho conquistata grazie a un segreto: 24 ore senza telefono. Quella pausa digitale regolare ha trasformato il mio modo di studiare e vivere. Ora voglio condividere questa scoperta con Pisa, offrendo a tutti la possibilità di sperimentare la straordinaria chiarezza mentale che deriva da un giorno di vera disconnessione.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="inizia">
+        <a href="mailto:pisadigitaldetox@pm.me" class="cta-button">Inizia il Tuo Detox Oggi</a>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contatti">
+        <div class="footer-content">
+            <div class="footer-email">
+                <a href="mailto:pisadigitaldetox@pm.me">pisadigitaldetox@pm.me</a>
+            </div>
+            <div class="footer-contact">
+                <p>Per prenotazioni,<br>contattaci!</p>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2025 Pisa Digital Detox</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Language selector
+        document.querySelector('.language-selector').addEventListener('change', function() {
+            if (this.value === 'en') {
+                alert('English version coming soon!');
+                this.value = 'it';
+            }
+        });
+    </script>
+</body>
+</html>
